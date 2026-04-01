@@ -155,48 +155,48 @@
       <h1 class="hero__title">HEAT<br>WAVE</h1>
       <p class="hero__sub">Move fast to ignite the trail. Thermal glow — red-hot core, icy blue edges, just like a real heatwave.</p>
     </div>
-    <p class="hero__hint">↓ scroll for installation code</p>
+    <p class="hero__hint">&#8595; scroll for installation code</p>
   </section>
 
   <hr>
 
   <section class="palette">
-    <p class="section-label">— Thermal Spectrum</p>
+    <p class="section-label">&mdash; Thermal Spectrum</p>
     <div class="heat-bar"></div>
     <div class="heat-bar-labels">
-      <span>Fast movement · Hot core</span>
-      <span>Slow / edges · Cold</span>
+      <span>Fast movement &middot; Hot core</span>
+      <span>Slow / edges &middot; Cold</span>
     </div>
     <div class="swatches">
-      <div class="swatch"><div class="swatch__dot" style="background:#F54269;box-shadow:0 0 9px rgba(245,66,105,0.85)"></div><span class="swatch__label">#F54269 · core</span></div>
-      <div class="swatch"><div class="swatch__dot" style="background:#FFEE52;box-shadow:0 0 9px rgba(255,238,82,0.85)"></div><span class="swatch__label">#FFEE52 · warm ring</span></div>
-      <div class="swatch"><div class="swatch__dot" style="background:#79E7F7;box-shadow:0 0 9px rgba(121,231,247,0.85)"></div><span class="swatch__label">#79E7F7 · cool edge</span></div>
-      <div class="swatch"><div class="swatch__dot" style="background:#3456C3;box-shadow:0 0 9px rgba(52,86,195,0.85)"></div><span class="swatch__label">#3456C3 · cold outer</span></div>
-      <div class="swatch"><div class="swatch__dot" style="background:#0f1429;box-shadow:0 0 5px rgba(52,86,195,0.35);border:1px solid rgba(255,255,255,0.08)"></div><span class="swatch__label">#0f1429 · void</span></div>
+      <div class="swatch"><div class="swatch__dot" style="background:#F54269;box-shadow:0 0 9px rgba(245,66,105,0.85)"></div><span class="swatch__label">#F54269 &middot; core</span></div>
+      <div class="swatch"><div class="swatch__dot" style="background:#FFEE52;box-shadow:0 0 9px rgba(255,238,82,0.85)"></div><span class="swatch__label">#FFEE52 &middot; warm ring</span></div>
+      <div class="swatch"><div class="swatch__dot" style="background:#79E7F7;box-shadow:0 0 9px rgba(121,231,247,0.85)"></div><span class="swatch__label">#79E7F7 &middot; cool edge</span></div>
+      <div class="swatch"><div class="swatch__dot" style="background:#3456C3;box-shadow:0 0 9px rgba(52,86,195,0.85)"></div><span class="swatch__label">#3456C3 &middot; cold outer</span></div>
+      <div class="swatch"><div class="swatch__dot" style="background:#0f1429;box-shadow:0 0 5px rgba(52,86,195,0.35);border:1px solid rgba(255,255,255,0.08)"></div><span class="swatch__label">#0f1429 &middot; void</span></div>
     </div>
   </section>
 
   <hr>
 
   <section class="install">
-    <p class="section-label">— WordPress Installation</p>
+    <p class="section-label">&mdash; WordPress Installation</p>
     <div class="steps">
       <div class="step">
-        <p class="step__tag">Method A · Theme File</p>
-        <p>Appearance → Theme File Editor → open <code>footer.php</code> → paste before <code>&lt;/body&gt;</code></p>
+        <p class="step__tag">Method A &middot; Theme File</p>
+        <p>Appearance &rarr; Theme File Editor &rarr; open <code>footer.php</code> &rarr; paste before <code>&lt;/body&gt;</code></p>
       </div>
       <div class="step">
-        <p class="step__tag">Method B · Plugin</p>
-        <p>Install <code>WPCode</code> or <code>Insert Headers and Footers</code> → Footer section → paste code</p>
+        <p class="step__tag">Method B &middot; Plugin</p>
+        <p>Install <code>WPCode</code> or <code>Insert Headers and Footers</code> &rarr; Footer section &rarr; paste code</p>
       </div>
       <div class="step">
-        <p class="step__tag">Method C · Block Editor</p>
+        <p class="step__tag">Method C &middot; Block Editor</p>
         <p>Add a <code>Custom HTML</code> block anywhere on the page, or use a Reusable Block site-wide</p>
       </div>
     </div>
     <div class="code-wrap">
       <div class="code-header">
-        <span class="code-header__title">heatwave-cursor — copy &amp; paste into WordPress</span>
+        <span class="code-header__title">heatwave-cursor &mdash; copy &amp; paste into WordPress</span>
         <button class="copy-btn" id="copyBtn">Copy</button>
       </div>
       <pre id="codeDisplay"></pre>
@@ -204,33 +204,23 @@
   </section>
 
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       HEATWAVE CURSOR — paste the contents of this script tag into
-       your WordPress site before </body> to install the effect.
-       ═══════════════════════════════════════════════════════════════ -->
   <script id="hwScript">
 (function () {
 
-  /* ── Config ───────────────────────────────────────────────────────
-     MIN_SPEED  px/s  Trail appears above this speed threshold.
-     MAX_SPEED  px/s  Speed at which the trail reaches peak heat (#F54269).
-     TRAIL_LIFE ms    How long the trail lingers before fading out.
-     BLEND            'source-over' keeps colours true to palette (no blowout).
-                      Switch to 'screen' for additive glow on very dark sites.
-  ─────────────────────────────────────────────────────────────────── */
-  var MIN_SPEED   =  380;
-  var MAX_SPEED   = 2800;
-  var TRAIL_LIFE  =  160;
-  var TRAIL_SPACE =    5;   /* minimum px between stored trail points */
+  /* ── Config ── */
+  var MIN_SPEED   =   60;
+  var MAX_SPEED   = 2000;
+  var TRAIL_LIFE  =  100;
+  var TRAIL_SPACE =    5;
   var BLEND       = 'source-over';
 
-  /* ── Thermal palette  (index 0 = hottest → 4 = coldest) ──────── */
+  /* ── Thermal palette (0 = hottest, 4 = coldest) ── */
   var PAL = [
-    [245,  66, 105],   /* #F54269 */
-    [255, 238,  82],   /* #FFEE52 */
-    [121, 231, 247],   /* #79E7F7 */
-    [ 52,  86, 195],   /* #3456C3 */
-    [ 15,  20,  41],   /* #0f1429 */
+    [245,  66, 105],
+    [255, 238,  82],
+    [121, 231, 247],
+    [ 52,  86, 195],
+    [ 15,  20,  41],
   ];
 
   function lerpRGB(t) {
@@ -248,7 +238,7 @@
     ];
   }
 
-  /* ── Canvas (fixed overlay, below cursor dot) ─────────────────── */
+  /* ── Canvas ── */
   var cv = document.createElement('canvas');
   cv.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:2147483640';
   document.body.appendChild(cv);
@@ -261,51 +251,30 @@
   resize();
   window.addEventListener('resize', resize);
 
-  /* ── Cursor dot ───────────────────────────────────────────────── */
-  var dot = document.createElement('div');
-  dot.style.cssText = 'position:fixed;width:10px;height:10px;border-radius:50%;background:#F54269;box-shadow:0 0 8px #F54269,0 0 20px rgba(245,66,105,0.6);pointer-events:none;z-index:2147483647;transform:translate(-50%,-50%);left:-50px;top:-50px';
-  document.body.appendChild(dot);
-
-  /* Replace native cursor */
-  var cs = document.createElement('style');
-  cs.textContent = 'html,body,*{cursor:none!important}';
-  document.head.appendChild(cs);
-
-  /* ── State ────────────────────────────────────────────────────── */
+  /* ── State ── */
   var mx = -50, my = -50;
-  var px = 0,   py = 0,   pt = 0;
+  var px = 0, py = 0, pt = 0;
   var speed = 0;
+  var blobSn = 0;
+  var blobAngle = 0;
   var sx = 0, sy = 0;
-  var trail = [];   /* [{x, y, t, spd}] — newest at end */
+  var trail = [];
 
-  /* ── Mouse tracking ───────────────────────────────────────────── */
+  /* ── Mouse tracking ── */
   document.addEventListener('mousemove', function (e) {
     mx = e.clientX;
     my = e.clientY;
-
-    dot.style.left = mx + 'px';
-    dot.style.top  = my + 'px';
-
     var now = performance.now();
     var dt  = now - pt;
     if (dt > 0 && dt < 100) {
       var dx = mx - px, dy = my - py;
-      /* Exponential moving average — high weight on history = smooth speed */
       speed = speed * 0.82 + (Math.sqrt(dx * dx + dy * dy) / dt * 1000) * 0.18;
     }
     px = mx; py = my; pt = now;
-
-    /* Dot colour tracks speed */
-    var sn = speed / MAX_SPEED;
-    if (sn > 1) sn = 1;
-    var c = lerpRGB(1 - sn * 0.85);
-    dot.style.background = 'rgb(' + c[0] + ',' + c[1] + ',' + c[2] + ')';
-    dot.style.boxShadow  = '0 0 8px rgb(' + c[0] + ',' + c[1] + ',' + c[2] + '),0 0 20px rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0.5)';
-
-    /* Append trail point only when moving fast enough */
     if (speed >= MIN_SPEED) {
       var gap = Math.sqrt((mx - sx) * (mx - sx) + (my - sy) * (my - sy));
       if (gap >= TRAIL_SPACE) {
+        var sn = speed / MAX_SPEED; if (sn > 1) sn = 1;
         trail.push({ x: mx, y: my, t: now, spd: sn });
         if (trail.length > 350) trail.splice(0, trail.length - 350);
         sx = mx; sy = my;
@@ -315,35 +284,18 @@
 
   document.addEventListener('mouseleave', function () { speed = 0; });
 
-  /* ── Render ───────────────────────────────────────────────────── */
-  /*
-   * Three-pass midpoint bezier spline.
-   *
-   * The entire trail is built as a single Path2D (quadraticCurveTo through
-   * midpoints), then stroked three times — one draw call per pass. This means:
-   *   • Zero dots: lineCap only fires at the two absolute ends of the ribbon,
-   *     never at internal arc joints.
-   *   • Constant GPU cost: 3 draw calls per frame regardless of trail length.
-   *
-   * Each pass uses a different blur radius and width multiplier:
-   *   Pass 0 — 52 px blur, widest  → soft cold halo (blue/indigo) that
-   *             completely blurs away any hard edge
-   *   Pass 1 — 20 px blur, medium  → cyan mid-glow
-   *   Pass 2 —  6 px blur, narrow  → hot #F54269 core, still softly edged
-   *
-   * A 6-stop linear gradient (sampled by age + speed, not screen position)
-   * colours the ribbon from cold/faded at the tail to hot/bright at the tip.
-   */
+  /* ── Render passes ── */
   var PASSES = [
-    { blur: 52, wm: 5.2, am: 0.38, ct: 0.56 },  /* outer cold halo  */
-    { blur: 20, wm: 2.4, am: 0.55, ct: 0.26 },  /* mid cyan glow    */
-    { blur:  6, wm: 1.0, am: 0.82, ct: 0.00 },  /* hot #F54269 core */
+    { blur: 28, wm: 4.5, am: 0.50, ct: 0.56 },
+    { blur: 12, wm: 2.0, am: 0.72, ct: 0.26 },
+    { blur:  4, wm: 1.0, am: 0.95, ct: 0.00 },
   ];
 
   function draw(now) {
     requestAnimationFrame(draw);
 
-    /* Expire old trail points */
+    if (now - pt > 50) speed *= 0.86;
+
     var cutoff = now - TRAIL_LIFE;
     var drop = 0;
     while (drop < trail.length && trail[drop].t < cutoff) drop++;
@@ -351,107 +303,127 @@
 
     ctx.clearRect(0, 0, cv.width, cv.height);
     var n = trail.length;
-    if (n < 3) return;
 
-    /* Pre-compute midpoints (shared by all passes) */
-    var midX = new Array(n - 1);
-    var midY = new Array(n - 1);
-    for (var k = 0; k < n - 1; k++) {
-      midX[k] = (trail[k].x + trail[k + 1].x) * 0.5;
-      midY[k] = (trail[k].y + trail[k + 1].y) * 0.5;
-    }
-
-    ctx.globalCompositeOperation = BLEND;
-    ctx.lineCap  = 'round';
-    ctx.lineJoin = 'round';
-
-    /*
-     * Per-arc variable-width strokes — one bezier arc per trail segment.
-     * Width tapers smoothly: tail (oldest, index 0) → very thin,
-     * source (newest, index n-1) → full thickness.
-     * taper = pow(i / (n-1), 0.65) maps 0→0 to 1→1 with a slight ease-in.
-     * Heavy blur on outer passes hides any round-cap overlap at joints.
-     */
-    for (var p = 0; p < PASSES.length; p++) {
-      var pass = PASSES[p];
-      ctx.filter = 'blur(' + pass.blur + 'px)';
-
-      for (var i = 1; i < n - 1; i++) {
-        var pt   = trail[i];
-        var age  = (now - pt.t) / TRAIL_LIFE;
-        var life = 1 - age; if (life < 0) continue;
-
-        /* taper: 0 at tail → 1 at source */
-        var taper = Math.pow(i / (n - 1), 0.65);
-
-        var temp = (1 - pt.spd) * 0.5 + age * 0.5 + pass.ct;
-        if (temp > 1) temp = 1; if (temp < 0) temp = 0;
-        var col = lerpRGB(temp);
-
-        var baseW = 8 + pt.spd * 16;
-        var w  = Math.max(0.4, baseW * pass.wm * taper);
-        var al = pass.am * Math.pow(life, 0.75) * (0.08 + pt.spd * 0.92) * (0.2 + taper * 0.8);
-
-        ctx.lineWidth   = w;
-        ctx.strokeStyle = 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',' + al + ')';
-        ctx.beginPath();
-        ctx.moveTo(midX[i - 1], midY[i - 1]);
-        ctx.quadraticCurveTo(pt.x, pt.y, midX[i], midY[i]);
-        ctx.stroke();
+    /* ── Trail (tapered filled polygon) ── */
+    if (n >= 3) {
+      var nx = new Array(n);
+      var ny = new Array(n);
+      for (var i = 0; i < n; i++) {
+        var dx, dy;
+        if (i < n - 1) { dx = trail[i+1].x - trail[i].x; dy = trail[i+1].y - trail[i].y; }
+        else            { dx = trail[i].x - trail[i-1].x; dy = trail[i].y - trail[i-1].y; }
+        var len = Math.sqrt(dx * dx + dy * dy);
+        if (len < 0.1) len = 0.1;
+        nx[i] = -dy / len;
+        ny[i] =  dx / len;
       }
+      for (var i = 1; i < n - 1; i++) {
+        nx[i] = nx[i-1] * 0.25 + nx[i] * 0.50 + nx[i+1] * 0.25;
+        ny[i] = ny[i-1] * 0.25 + ny[i] * 0.50 + ny[i+1] * 0.25;
+        var len = Math.sqrt(nx[i] * nx[i] + ny[i] * ny[i]);
+        if (len > 0.01) { nx[i] /= len; ny[i] /= len; }
+      }
+
+      var baseW = 16 + trail[n - 1].spd * 30;
+      ctx.globalCompositeOperation = BLEND;
+
+      for (var p = 0; p < PASSES.length; p++) {
+        var pass = PASSES[p];
+        var g = ctx.createLinearGradient(trail[0].x, trail[0].y, trail[n-1].x, trail[n-1].y);
+        for (var s = 0; s <= 5; s++) {
+          var t    = s / 5;
+          var si   = Math.min(n - 1, Math.round(t * (n - 1)));
+          var tp   = trail[si];
+          var age  = (now - tp.t) / TRAIL_LIFE;
+          var life = 1 - age; if (life < 0) life = 0;
+          var temp = age * 0.80 + (1 - tp.spd) * 0.20 + pass.ct;
+          if (temp > 1) temp = 1; if (temp < 0) temp = 0;
+          var taper = Math.pow(t, 0.75);
+          var al = pass.am * Math.pow(life, 0.28) * (0.05 + taper * 0.95);
+          var col = lerpRGB(temp);
+          g.addColorStop(t, 'rgba(' + col[0] + ',' + col[1] + ',' + col[2] + ',' + al + ')');
+        }
+
+        ctx.filter = 'blur(' + pass.blur + 'px)';
+        var hw = baseW * pass.wm * 0.5;
+        ctx.beginPath();
+        for (var i = 0; i < n; i++) {
+          var t = i / (n - 1);
+          var w = hw * Math.pow(t, 1.6);
+          var ex = trail[i].x + nx[i] * w;
+          var ey = trail[i].y + ny[i] * w;
+          if (i === 0) ctx.moveTo(ex, ey); else ctx.lineTo(ex, ey);
+        }
+        for (var i = n - 1; i >= 0; i--) {
+          var t = i / (n - 1);
+          var w = hw * Math.pow(t, 1.6);
+          ctx.lineTo(trail[i].x - nx[i] * w, trail[i].y - ny[i] * w);
+        }
+        ctx.closePath();
+        ctx.fillStyle = g;
+        ctx.fill();
+      }
+      ctx.filter = 'none';
+
+      var li = Math.max(0, n - 5);
+      var adx = trail[n-1].x - trail[li].x;
+      var ady = trail[n-1].y - trail[li].y;
+      if (adx * adx + ady * ady > 4) blobAngle = Math.atan2(ady, adx);
     }
 
-    ctx.filter = 'none';
+    /* ── Heat source blob ── */
+    var targetSn = speed / MAX_SPEED; if (targetSn > 1) targetSn = 1;
+    if (targetSn > blobSn) { blobSn += (targetSn - blobSn) * 0.10; }
+    else { blobSn -= 0.04; if (blobSn < 0) blobSn = 0; }
+    var sn = blobSn;
 
-    /* ── Heat source blob ─────────────────────────────────────────
-     * Large radial thermal glow at the cursor tip — the "pressure"
-     * area from the reference images. Hot core → warm → cyan →
-     * cold blue, all blurred, fading to transparent at the edge.
-     * Drawn last so it sits on top of the trail.                  */
-    var sn = speed / MAX_SPEED; if (sn > 1) sn = 1;
-    if (sn > 0.05) {
-      var R = 55 + sn * 75;   /* 55 px minimum → 130 px at full speed */
+    if (sn > 0) {
+      var R = 38 + sn * 50;
+      var stretch = 1.05 + sn * 0.15;
+      var cs = (1 - sn) * 0.7;
+      var c2 = lerpRGB(Math.min(1, cs + 0.38));
+      var c3 = lerpRGB(Math.min(1, cs + 0.58));
 
-      /* Layer 1 — wide cold outer halo */
-      ctx.filter = 'blur(32px)';
-      var gb1 = ctx.createRadialGradient(mx, my, 0, mx, my, R * 2.4);
-      gb1.addColorStop(0,    'rgba(52,86,195,'  + (0.72 * sn) + ')');
-      gb1.addColorStop(0.45, 'rgba(52,86,195,'  + (0.32 * sn) + ')');
-      gb1.addColorStop(1,    'rgba(15,20,41,0)');
-      ctx.fillStyle = gb1;
-      ctx.beginPath(); ctx.arc(mx, my, R * 2.4, 0, 6.2832); ctx.fill();
+      ctx.save();
+      ctx.translate(mx, my);
+      ctx.rotate(blobAngle);
+      ctx.scale(stretch, 1.0);
 
-      /* Layer 2 — cyan mid-ring */
       ctx.filter = 'blur(16px)';
-      var gb2 = ctx.createRadialGradient(mx, my, 0, mx, my, R * 1.35);
-      gb2.addColorStop(0,    'rgba(121,231,247,' + (0.82 * sn) + ')');
-      gb2.addColorStop(0.55, 'rgba(121,231,247,' + (0.35 * sn) + ')');
-      gb2.addColorStop(1,    'rgba(52,86,195,0)');
-      ctx.fillStyle = gb2;
-      ctx.beginPath(); ctx.arc(mx, my, R * 1.35, 0, 6.2832); ctx.fill();
+      var gb1 = ctx.createRadialGradient(0, 0, 0, 0, 0, R * 2.0);
+      gb1.addColorStop(0,   'rgba(' + c3[0] + ',' + c3[1] + ',' + c3[2] + ',' + (0.45 * sn) + ')');
+      gb1.addColorStop(0.5, 'rgba(' + c3[0] + ',' + c3[1] + ',' + c3[2] + ',' + (0.15 * sn) + ')');
+      gb1.addColorStop(1,   'rgba(' + c3[0] + ',' + c3[1] + ',' + c3[2] + ',0)');
+      ctx.fillStyle = gb1;
+      ctx.beginPath(); ctx.arc(0, 0, R * 2.0, 0, 6.2832); ctx.fill();
 
-      /* Layer 3 — hot core, triple-painted to fully saturate red */
       ctx.filter = 'blur(8px)';
-      var gb3 = ctx.createRadialGradient(mx, my, 0, mx, my, R);
-      gb3.addColorStop(0,    'rgba(245,66,105,1)');
-      gb3.addColorStop(0.20, 'rgba(245,66,105,'  + (0.95 * sn) + ')');
-      gb3.addColorStop(0.42, 'rgba(255,238,82,'  + (0.80 * sn) + ')');
-      gb3.addColorStop(0.68, 'rgba(121,231,247,' + (0.50 * sn) + ')');
-      gb3.addColorStop(1,    'rgba(52,86,195,0)');
-      ctx.fillStyle = gb3;
-      ctx.beginPath(); ctx.arc(mx, my, R,        0, 6.2832); ctx.fill();
-      ctx.beginPath(); ctx.arc(mx, my, R * 0.55, 0, 6.2832); ctx.fill();
-      ctx.beginPath(); ctx.arc(mx, my, R * 0.28, 0, 6.2832); ctx.fill();
+      var gb2 = ctx.createRadialGradient(0, 0, 0, 0, 0, R * 1.2);
+      gb2.addColorStop(0,   'rgba(' + c2[0] + ',' + c2[1] + ',' + c2[2] + ',' + (0.55 * sn) + ')');
+      gb2.addColorStop(0.6, 'rgba(' + c2[0] + ',' + c2[1] + ',' + c2[2] + ',' + (0.18 * sn) + ')');
+      gb2.addColorStop(1,   'rgba(' + c3[0] + ',' + c3[1] + ',' + c3[2] + ',0)');
+      ctx.fillStyle = gb2;
+      ctx.beginPath(); ctx.arc(0, 0, R * 1.2, 0, 6.2832); ctx.fill();
 
-      /* Layer 4 — razor-hot centre, no blur */
-      ctx.filter = 'blur(2px)';
-      var gb4 = ctx.createRadialGradient(mx, my, 0, mx, my, R * 0.22);
+      ctx.filter = 'blur(4px)';
+      var gb3 = ctx.createRadialGradient(0, 0, 0, 0, 0, R * 0.8);
+      gb3.addColorStop(0,    'rgba(245,66,105,' + Math.min(1, sn * 1.3) + ')');
+      gb3.addColorStop(0.30, 'rgba(245,66,105,' + (0.90 * sn) + ')');
+      gb3.addColorStop(0.55, 'rgba(255,180,80,' + (0.45 * sn) + ')');
+      gb3.addColorStop(0.80, 'rgba(' + c2[0] + ',' + c2[1] + ',' + c2[2] + ',' + (0.20 * sn) + ')');
+      gb3.addColorStop(1,    'rgba(' + c3[0] + ',' + c3[1] + ',' + c3[2] + ',0)');
+      ctx.fillStyle = gb3;
+      ctx.beginPath(); ctx.arc(0, 0, R * 0.8, 0, 6.2832); ctx.fill();
+
+      ctx.filter = 'blur(1px)';
+      var gb4 = ctx.createRadialGradient(0, 0, 0, 0, 0, R * 0.25);
       gb4.addColorStop(0,   'rgba(245,66,105,1)');
-      gb4.addColorStop(0.6, 'rgba(245,66,105,' + sn + ')');
+      gb4.addColorStop(0.5, 'rgba(245,66,105,' + (0.9 * sn) + ')');
       gb4.addColorStop(1,   'rgba(245,66,105,0)');
       ctx.fillStyle = gb4;
-      ctx.beginPath(); ctx.arc(mx, my, R * 0.22, 0, 6.2832); ctx.fill();
+      ctx.beginPath(); ctx.arc(0, 0, R * 0.25, 0, 6.2832); ctx.fill();
 
+      ctx.restore();
       ctx.filter = 'none';
     }
 
